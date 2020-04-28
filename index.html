@@ -1,151 +1,158 @@
-<html><head><link rel="stylesheet" type="text/css" href="csSpectro.css" media="all"></head>  
-<body>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+<html><head><link rel="stylesheet" type="text/css" href="style.css" media="all"></head>  
+ <body>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <audio controls=""></audio>
+  <div><canvas id="spectrogram"> </canvas></div>
 
-<div id="content">
-<div id="controls">
-	<h1>
-  <span id="title"> SpectroID <span class="back-title glitch"> SpectroID </span>
-  </span>
-  </h1>
-  <div class="istruction">
-   <div class="wrapper">
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  
-</div>
-
-  <img class="image" src="https://poetryinanemptycokecan.files.wordpress.com/2014/09/aphex-twin-logo1.jpg?w=648" style="max-width:400px;max-height:400px">
-      <div class="middle">
-    <div class="text">TWO PHASE</div>
-    <div id="one">
-    London is the capital city of England. It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants.
- Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</div>
+  <div id="phase2">
+    <canvas id="photoCanvas"></canvas>
+    <div><input class="btn" type="button" value="wait, loading Data" disabled="disabled" id="StS"></div>
   </div>
-</div>
-				<input class="btn" type="button" value="wait, loading video &amp; images" disabled="disabled" onclick="startVideo(),ToggleTransport()" id="startbutton">	</div>
-		
- 
-<div id="container">
+  <div id="content">
+    <div id="controls">
+      <h1>
+        <span id="title"> SpectroID <span class="back-title glitch"> SpectroID </span>
+        </span>
+      </h1>
 
-				<video id="videoel" width="410" height="500" loop="" playsinline="" autoplay="">
-				</video>
-			  <canvas id="overlay" width="410" height="500"></canvas>
-				<canvas id="webgl" width="410" height="500"></canvas>
- <div id="emotion_list"> 
-    <ul class="emotion_list">
-    <li>
-         <p id="happy">happy</p>
-    </li>
-    <li>
-         <p id="wow">wow</p>
-    </li>
-    <li>
-         <p id="sad">sad</p>
-    </li>
-    <li>
-         <p id="angry">angry</p>
-    </li>
-    </ul>
- </div>
-        <div id="emotion_container"> 
-				<div id="emotion_chart"></div>
+      <div class="wrapper">
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+
+      </div>
+ <div class="istruction">
+      <img class="image" src="https://poetryinanemptycokecan.files.wordpress.com/2014/09/aphex-twin-logo1.jpg?w=648" style="max-width:400px;max-height:400px">
+     
+        <div class="middle">
+          <div class="text">TWO EXPERIENCES</div>
+          <div id="one"><a>
+           <br>  -1P- EMOTION TRACK: kepp still until the mask convergence<br> play with emotions, the music will follow your mood<br> <br>
+             -2P- SPECTRO ID: Take a photo and "see" how your face sounds  </a></div>
         </div>
-  <div class="stripe">
-  <div class="slide">
-     CLICK ON CANVAS TO TAKE A PICTURE
+      </div>
+      <input class="btn" type="button" value="wait, loading video &amp; images" disabled="disabled" onclick="startVideo(),ToggleTransport()" id="startbutton">
+      <div id="author">
+
+        <a>By Adriano Bonfantini &amp; Dario De Lucia </a><br>
+        <a href="https://github.com/Ad999-g/SpectroId" target="_blank">GITHUB PROJECT</a></div>
+
+    </div>
+
+    <div id="container">
+
+      <video id="videoel" width="668" height="500" loop="" playsinline="" autoplay="">
+      </video>
+      <canvas id="overlay" width="668" height="500"></canvas>
+      <canvas id="webgl" width="668" height="500"></canvas>
+      <div id="emotion_list">
+        <ul class="emotion_list">
+          <li>
+            <p id="happy">happy</p>
+          </li>
+          <li>
+            <p id="wow">wow</p>
+          </li>
+          <li>
+            <p id="sad">sad</p>
+          </li>
+          <li>
+            <p id="angry">angry</p>
+          </li>
+        </ul>
+      </div>
+      <div id="emotion_container">
+        <div id="emotion_chart"></div>
+      </div>
+      <div class="stripe">
+        <div class="slide" id="slide">
+          CLICK ON CANVAS TO TAKE A PICTURE
+        </div>
+      </div>
+    </div>
   </div>
-</div>
- </div>
-</div>
-<div id="phase2">
-<canvas id="photoCanvas"></canvas>
-<div><input class="btn" type="button" value="wait, loading Data" disabled="disabled" id="StS"></div> 
-</div>
-<div id="spec"><canvas id="spectrogram">	</canvas></div>
+
+
 
 
 
   <script src="jquery.min.js"></script>
   <script src="clmtrackr.js"></script>
-   <script src="utils.js"></script>
-       <script src="webgl-utils.js"></script>
-    <script src="dat.gui.min.js"></script>
-      <script src="Stats.js"></script>
-       <script src="face_deformer.js"></script>
-   <script src="model_pca_20_svm.js"></script>
-    <script src="emotionmodel.js"></script>
-   <script src="emotion_classifier.js"></script> 
-   <script src="d3.min.js"></script> 
-   <script src="poisson_new.js"></script> 
-    <script src="Tone.min.js"></script> 
+  <script src="utils.js"></script>
+  <script src="webgl-utils.js"></script>
+  <script src="dat.gui.min.js"></script>
+  <script src="Stats.js"></script>
+  <script src="face_deformer.js"></script>
+  <script src="model_pca_20_svm.js"></script>
+  <script src="emotionmodel.js"></script>
+  <script src="emotion_classifier.js"></script> 
+  <script src="d3.min.js"></script> 
+  <script src="poisson_new.js"></script> 
+  <script src="Tone.min.js"></script> 
   
-    
-  
-  <script src="Spectro.js"></script>
-  
-  
-
-
+   
+  <script src="spectro.js"></script>
+  <script src="EmotionStaff.js"></script>
+  <script src="EmotionSynth.js"></script>
+  <script src="scale.js"></script>
 
 </body></html>
